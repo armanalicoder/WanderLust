@@ -1,0 +1,27 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <section>
+        <div class="row">
+            <div class="col-sm-12 my-2">
+                <h3>Showing <span class="commoncolor">Result</span> for : <span class="commoncolor"><%=query%></span></h3>
+            </div>
+            <% for(let listing of data){%>
+            <div class="col-sm-4 my-2">
+                <a class="listing-card" href="/listings/<%=listing._id%>">
+                        <div class="card h-100 border border-0 list-card">
+                          <img src="<%=listing.image.url%>" class="cardimg card-img-top rounded-4"  alt="<%=listing.image.filename%>" style="object-fit: cover; height: 250px; width: 100%;">
+                          <div class="card-body">
+                            <h5 class="card-title"><%=listing.title%></h5>
+                            <p class="card-text lh-1">Hosted by <%=listing.owner[0].username%></p>
+                            <p class="card-text lh-1"><%=listing.createdAt.toLocaleString()%></p>
+                            <p class="card-text lh-1"><span class="fw-bold">&#8377;<%=listing.price.toLocaleString("en-IN")%></span> night
+                            <i class="GST">+18% GST Included</i>
+                            </p>
+                          </div>
+                        </div>
+                </a>
+              </div>
+              <%}%>
+        </div>
+    </section>
+</body>

@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <section>
+        <div class="row">
+            <% if (errorMsg && errorMsg.length > 0) { %>
+                <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                    <%= errorMsg %>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            <% } %>
+            
+            <% if (successMsg && successMsg.length > 0) { %>
+              <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+                <%= successMsg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+            <div class="col-sm-6">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPSXtRCwXnhCyp8FqYlDgkrOsVOrp9EMzj7RuSFEhkCP_CKDJIYk9vn3bg-lGb0jWyH3rRJ4v3elg-hRIAzmqgrDVZ_rEk1xNwRsjgKrc2LhgzXvpgFlGwf5Jik_Xgsb5vIe_fDgcCA5TMo-HVrWI15c4aLyCeaMnOaINnK0gb3cRnMRpSObckcHSwURk/s2000/4707071.jpg" class="img-fluid"/>
+            </div>
+            <div class="col-sm-6  shadow p-4 rounded-4 my-auto">
+                <h3>Welcome To WanderLust</h3>
+                <form method="post" action="/login" class="g-3 needs-validation" novalidate>
+                    <div class="col-md-12">
+                      <label for="validationCustomUsername" class="form-label">Username</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        <input type="text" name="username" class="form-control" placeholder="Enter Your Username" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="validationCustom01" class="form-label">Password</label>
+                        <input type="password" name="password" placeholder="Enter your Password" class="form-control" id="validationCustom01" required>
+                        <div class="invalid-feedback">
+                          Enter your Password
+                        </div>
+                    </div>
+                    <div class="col-sm-12 mt-2">
+                      <button class="userbtn rounded-pill p-2 w-100 text-white">Login</button>
+                    </div>
+                    <div class="col-sm-12 mt-2 d-flex justify-content-between">
+                       <a href="/signup" class="nav-link">Create an Account</a>
+                       <a href="/signup" class="nav-link">Forget your passoword</a>
+                      </div>
+                  </form>
+            </div>
+           
+        </div>
+       
+    </section>
+</body>

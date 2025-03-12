@@ -1,0 +1,38 @@
+<section class="sticky-top">
+                <nav class="navbar navbar-expand-md bg-white border-bottom" >
+                    <div class="container">
+                      <a class="navbar-brand" href="/listings"><img src="/img/wanderlust.png" class="img-fluid" height="40px" width="40px" alt="logo"/><span class="logo fs-4">WanderLust</span></a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                          <li class="nav-item">
+                            <a class="nav-link navmenu" href="/listings"><i class="fa-regular fa-compass"></i> Explore</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link navmenu" href="/listings/new"><i class="fa-solid fa-earth-americas"></i> Rent Your Place</a>
+                          </li>
+                        </ul>
+                        <form class="d-flex mx-auto" action="/search" role="search">
+                          <div class="input-group ">
+                            <!-- Dropdown to select search category -->
+                            <select class="border border-0" name="by">
+                                <option value="location">Search by Location</option>
+                                <option value="price">Search by Price</option>
+                                <option value="country">Search by Country</option>
+                            </select>
+                        </div>
+                          <input class="form-control me-2 rounded-pill navsearch" name="q" type="search" placeholder="Search" aria-label="Search">
+                          <button class="searchbtn" type="submit"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></button>
+                        </form>
+                        <% if (!currUser) {%>
+                          <a class="mx-2 my-2 userbtn fs-6 rounded-pill ps-3 pe-3 pb-1 pt-1 text-white" href="/login">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                          <a class="btn btn-dark fs-6 rounded-pill ps-3 pe-3 pb-1 pt-1" href="/signup">Sign up <i class="fa-solid fa-user-plus"></i></a>
+                        <%}else{%>
+                        <a class="btn btn-danger" href="/logout">Logout</a>
+                        <%}%>
+                      </div>
+                    </div>
+                  </nav>
+    </section>

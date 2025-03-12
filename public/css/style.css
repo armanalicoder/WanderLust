@@ -1,0 +1,64 @@
+.listing-card{
+    text-decoration: none;
+}
+.cardimg:hover{
+    -webkit-filter: brightness(70%);
+    
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.container{
+    flex:1;
+}
+h1{
+    font-size: 100px;
+}
+.commoncolor{
+    color:  #ff385c;   
+}
+.logo{
+    color:  #ff385c;
+    font-weight: 500;
+    /* font-size: 20px; */
+}
+.searchbtn{
+    background-color: #ff385c;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    padding: 0px 10px 0px 10px ;
+}
+.userbtn{
+    background-color: #ff385c;
+    text-decoration: none;
+    border: none;
+}
+
+/* Map Styling*/
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 20px;
+}
+.navmenu{
+    border-radius: 20px ;
+}
+.navmenu:hover{
+    border-radius: 20px;
+    background-color: #f7f7f7;
+}
+.navsearch:hover{
+    box-shadow: 2px 3px 3px #ff385c;
+}
+.topmenu{
+    opacity: 0.7;
+}
+.topmenu:hover{
+    opacity: 1;
+}
+.GST{
+    display: none;
+}

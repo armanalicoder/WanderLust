@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi2xWGGXrROMFY2BBO7Non6-3Flb5wnCLN1MDv8zNwDwYnO5jjKf2qLge6sYZisIN0nYtmUaki9WkhueuLG6d9RbDvvl23EofUayvRR5Cbb4Xlek98eXIXWIL2PIas3WPyfwvvmuv-YHGq_7P5u2ZuW54uK02QcoYdPKVpDk-n-S0aZRXxZ0JaHqOstBhU/s4500/2301.i518.007.S.m005.c13.realistic%20travel%20horizontal%20banner.jpg" class="img-fluid"/>
+          </div>
+            <div class="col-sm-6 shadow p-4 my-2 rounded-4">
+                <h2 class="text-start">Edit Your Listing</h2>
+                <form class="row g-3 needs-validation" novalidate method="post" enctype="multipart/form-data" action="/listings/<%=data._id%>/edit?_method=PATCH">
+                    <div class="col-md-12">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" required class="form-control" name="title" value="<%=data.title%>" id="title">
+                      <div class="invalid-feedback">Title should be Valid.</div>
+                      <div class="valid-feedback">Title Looks Good.</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="description" class="form-label">Description</label>
+                      <textarea class="form-control" required name="description" id="description"><%=data.description%></textarea>
+                      <div class="valid-feedback">Description Looks Good.</div>
+                      <div class="invalid-feedback">Description should be Valid</div>
+                    </div>
+                    <div class="col-md-12">
+                      <img src="<%=originalUrl%>" height="100px" width="100px" class="img-fluid"/><br/>
+                      <label for="image" class="form-label">Upload Image</label>
+                      
+                      <input type="file" required name="image" class="form-control" id="image">
+                    </div>
+                    <div class="col-md-4">
+                      <label for="price" class="form-label">Price</label>
+                      <input type="number" required name="price" value="<%=data.price%>" class="form-control" id="price">
+                      <div class="invalid-feedback">Price should be Valid.</div>
+                    </div>
+                    <div class="col-md-8">
+                      <label for="location" class="form-label">Location</label>
+                      <input type="text" required name="location" value="<%=data.location%>" class="form-control" id="location">
+                      <div class="invalid-feedback">Enter Location Name.</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="country" class="form-label">Country</label>
+                      <input type="text" required name="country" id="country" value="<%=data.country%>" class="form-control">
+                      <div class="invalid-feedback">Enter Country Name.</div>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="userbtn text-white rounded-pill w-100 p-2">Make Changes <i class="fa-solid fa-check"></i></button>
+                    </div>
+                  </form>
+                  <form method="get" action="/listings/<%=data._id%>"><button class="mt-2 btn btn-dark w-100 rounded-pill" href="/listings"><i class="fa-solid fa-backward-step"></i> Back To Listing</button></form>
+            </div>
+        </div>
+    </div>
+</body>

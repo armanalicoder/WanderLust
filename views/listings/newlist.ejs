@@ -1,0 +1,67 @@
+<%layout("/layouts/boilerplate")-%>
+<body>
+    <div class="container">
+        <div class="row">
+          <% if (errorMsg && errorMsg.length > 0) { %>
+            <div class="alert alert-danger alert-dismissible fade show mt-2" role="alert">
+                <%= errorMsg %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <% } %>
+        
+        <% if (successMsg && successMsg.length > 0) { %>
+          <div class="alert alert-success alert-dismissible fade show mt-2" role="alert">
+            <%= successMsg %>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        <%}%>
+          <div class="col-sm-6">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiqRLOdS7WyMKZuROjb5aoFmBjxOIDs1pG9nevwCJLAufcqRMJfNqLrSJPhA8wX-1ew7zanllxJzdYstShkBR9GuMwFDZc3Y9ztu48FGp3LgGpDkE69TQ3-ypdgRhj16gK3AHKutQfb-H99NogUUdHHAFpIYOoMMdU4VU94oe4DqwZw8xbBQmhjidYstKk/s2000/3323585.jpg" class="img-fluid"/>
+          </div>
+            <div class="col-sm-6 shadow p-4 my-2 rounded-4">
+                <h2>Create Your Listing</h2>
+                <form class="g-3 needs-validation" method="post" novalidate action="/listings/new" enctype="multipart/form-data">
+                    <div class="col-md-12">
+                      <label for="title" class="form-label">Title</label>
+                      <input type="text" required class="form-control" name="title" placeholder="Enter Title" id="title">
+                      <div class="invalid-feedback">Title should be Valid.</div>
+                      <div class="valid-feedback">Title Looks Good.</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="description" class="form-label">Description</label>
+                      <textarea class="form-control" required placeholder="Enter Description" name="description" id="description"></textarea>
+                      <div class="valid-feedback">Description Looks Good.</div>
+                      <div class="invalid-feedback">Description should be Valid</div>
+                    </div>
+                    <div class="col-md-12">
+                      <label for="image" class="form-label">Upload Image</label>
+                      <input type="file" name="image" required class="form-control" id="image">
+                      <div class="invalid-feedback">Please Upload Image </div>
+                    </div>
+                    <div class="col-md-12 d-flex">
+                      <div class="col-md-6 me-2">
+                        <label for="price" class="form-label">Price</label>
+                        <input type="number" required name="price" placeholder="Enter Price" class="form-control" id="price">
+                        <div class="invalid-feedback">Price should be Valid.</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" required name="location" placeholder="Enter Location" class="form-control" id="location">
+                        <div class="invalid-feedback">Enter Location Name.</div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-12">
+                      <label for="country" class="form-label">Country</label>
+                      <input type="text" required name="country" id="country" placeholder="Enter Country" class="form-control">
+                      <div class="invalid-feedback">Enter Country Name.</div>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                        <button type="submit" class="userbtn rounded-pill p-2 w-100 text-white">Create Your Listing <i class="fa-solid fa-check"></i></button>
+                    </div>
+                  </form>
+                  <a class="mt-2 btn btn-dark w-100 rounded-pill" href="/"><i class="fa-solid fa-backward-step"></i> Back To Listing</a>
+            </div>
+        </div>
+    </div>
+</body>
